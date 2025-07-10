@@ -12,6 +12,32 @@
   <p>This is a static website using HTML, CSS, and JavaScript.</p>
   <button onclick="sayHi()">Click Me</button>
 
-  <script src="script.js"></script>
+  <!-- Your site JavaScript -->
+  <script>
+    function sayHi() {
+      alert("Hello! This site is hosted on GitHub Pages.");
+    }
+
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US'; // Set language if needed
+
+        embeddedservice_bootstrap.init(
+          '00D2v000000SgBD',
+          'Tms_Bot',
+          'https://d2v000000sgbdea0.my.site.com/ESWTmsBot1752062375204',
+          {
+            scrt2URL: 'https://d2v000000sgbdea0.my.salesforce-scrt.com'
+          }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    }
+  </script>
+
+  <!-- Salesforce Embedded Messaging Bootstrap Script -->
+  <script type='text/javascript' src='https://d2v000000sgbdea0.my.site.com/ESWTmsBot1752062375204/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
 </body>
 </html>
